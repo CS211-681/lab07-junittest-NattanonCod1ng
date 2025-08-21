@@ -1,5 +1,7 @@
 package ku.cs.models;
 
+import java.util.function.Supplier;
+
 public class Student {
     private String id;
     private String name;
@@ -32,7 +34,19 @@ public class Student {
     // TODO: design grading system for Student
     public String grade()
     {
-        return score > 60 ? "P" : "F";
+        if (score >= 80) {
+            return "A";
+        }
+        else if (score >= 70) {
+            return "B";
+        }
+        else if (score >= 60) {
+            return "C";
+        }
+        else if (score >= 50) {
+            return "D";
+        }
+        return "F";
     }
 
     public boolean isId(String id) {
